@@ -22,6 +22,6 @@ This plugin provides a basic integration to the Image Optimisation and CSS optim
 
 In that case, no optimisations are provided.
 
-### I've put a correct application name into settings, and my images broke. What should I do?
+### I've put a correct application name into settings, and my images are broken now. What should I do?
 
 Double-check the application name in the Whateverweb Dashboard (on the project settings page) and check that your application is enabled (can be done through the Whateverweb Dashboard). If the problem persists, contact Whateverweb support at team@whateverweb.com
