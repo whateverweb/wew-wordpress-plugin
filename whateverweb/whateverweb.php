@@ -42,7 +42,7 @@ License: GPLv2 or later
         $wew_image_prefix = mt_get_wew_image_scaler_prefix();
         if(isset($wew_image_prefix)) {
             $dom = new DOMDocument();
-            @$dom->loadHTML($content);
+            @$dom->loadHTML(mb_convert_encoding($content, "HTML-ENTITIES", "UTF-8"));
 
             foreach ($dom->getElementsByTagName('img') as $node) {
                 $oldsrc = $node->getAttribute('src');
