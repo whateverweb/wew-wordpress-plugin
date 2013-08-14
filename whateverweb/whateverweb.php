@@ -30,6 +30,10 @@ License: GPLv2 or later
         return substr_count($url, '://') > 1;
     }
 
+    function mt_is_google_font_stylesheet($url) {
+        return substr_count($url, 'fonts.google') > 0;
+    }
+
     /*
      * Image Optimiser integration
      */
@@ -66,7 +70,7 @@ License: GPLv2 or later
             $customXML = new SimpleXMLElement($tag);
             $href = (string)$customXML->attributes()->href;
             $rel = (string)$customXML->attributes()->rel;
-            if(!isset($rel) || $rel != "stylesheet"){
+            if(mt_is_google_font_stylesheet($href) || !isset($rel) || $rel != "stylesheet") {
                 return $tag;
             }
             $customXML->attributes()->href = $wew_prefix . $customXML->attributes()->href;
